@@ -6,8 +6,8 @@ import { RegisterScreen } from '../components/auth/RegisterScreen'
 export const AuthRouter = () => {
     return (
         <Switch>
-            <Route path="/auth/login" component={LoginScreen}/>
-            <Route path="/auth/register" component={RegisterScreen}/>
+            <Route exact path="/auth/login" component={LoginScreen}/>
+            <Route exact path="/auth/register" component={RegisterScreen}/>
             <Redirect to="/auth/login"/>
         </Switch>
     )
