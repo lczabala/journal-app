@@ -30,6 +30,10 @@
     }
 }
 
+.button__block{
+    width: 100%;
+}
+
 .google-btn {
     cursor: pointer;
     margin-top: 5px;
@@ -59,7 +63,7 @@
     }
     .btn-text {
         float: right;
-        margin: 11px 40px 0 0;
+        margin: 11px 20%;
         color: $white;
         font-size: 14px;
         letter-spacing: 0.2px;

@@ -21,7 +21,7 @@ export const LoginScreen = () => {
                     name="password"
                 />
                 <button
-                    className="button__btn button__primary"
+                    className="button__btn button__primary button__block"
                     
                     type="submit"
                 >
@@ -43,7 +43,7 @@ export const LoginScreen = () => {
                     </div>
                 </div>
 
-                <Link to="/auth/register">
+                <Link to="/auth/register" className="links">
                     Join us!
                 </Link>                
             </form>

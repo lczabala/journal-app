@@ -1,6 +1,5 @@
 .auth__main{
-    align-items: center;
-    background-color: $primaryColor;
+    align-items: center;    
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -8,12 +7,37 @@
     width: 100vw;
 }
 
+.auth__main-1{
+    align-items: center;
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    height: 100vh;
+    width: 60vw;
+}
+
+.auth__main-2{
+    align-items: center;
+    
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    height: 100vh;
+    width: 40vw;
+}
+
+.auth__main-2-img{
+    width: 100%;
+    
+}
+
 .auth__box-container{
     border-radius: 5px;
     box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);;
     background-color: white;
     padding: 20px;
-    width: 250px;
+    width: 300px;
 }
 
 .auth__title{
@@ -27,7 +51,7 @@
     border-bottom: 1px solid $light-grey;
     font-size: 16px;
     height: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     transition: border-bottom 0.3s ease;
     width: 100%;
 
@@ -55,4 +79,25 @@
     justify-content: center;
     margin-bottom: 10px;
     padding: 5px
+}
+
+@media only screen and (max-width: 600px) {
+    .auth__main-2{
+       display: none;
+        
+    }
+
+    .auth__main-1{
+        align-items: center;
+        background-color: $primaryColor;
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .auth__box-container{        
+        width: 250px;
+    }
 }
