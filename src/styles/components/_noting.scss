@@ -1,0 +1,19 @@
+.nothing__main-content{
+    align-items: center;
+    background-color: $primaryColor;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.nothing__main-content h4{
+    font-size: 2rem;
+}
+
+.nothing__main-content i{
+    font-size: 4rem;
+    font-weight: 500;
+}

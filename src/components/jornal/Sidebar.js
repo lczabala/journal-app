@@ -7,7 +7,7 @@ export const Sidebar = () => {
         <aside className="journal__sidebar">
             <div className="journal__sidebar-navbar">
                 <h3 className="">
-                    <i className="far fa-moon"></i>
+                    <i className="far fa-smile-beam"></i>
                     <span> ¡Hola, Luis!</span>
                 </h3>
                 <button className="button__btn button__primary button__logout">
