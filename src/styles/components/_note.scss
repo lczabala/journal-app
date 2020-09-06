@@ -12,3 +12,79 @@
     justify-content: space-between;
     padding: 10px 20px;
 }
+
+.note__content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.note__input{
+    color: $dark-grey;
+    border: 0px;
+    border-bottom: 1px solid $light-grey;
+    font-size: 16px;
+    //height: 20px;
+    margin-bottom: 15px;
+    transition: border-bottom 0.3s ease;
+    
+    &:focus{
+        border-bottom: 1px solid $primaryColor;
+        outline: none;
+    }
+}
+
+.note__title-input{
+    width: 50%;    
+}
+
+.note__textarea{
+    flex: 1 1 auto;
+    margin-top: 2rem;
+    resize: none;
+    width: 70%;
+}
+
+.note__image{  
+    margin: 2rem auto;    
+    width: 60%;
+}
+
+.note__image img{    
+    width: 100%;    
+}
+
+@media only screen and (max-width: 600px) {
+    .note__appbar span{
+        font-size: .8rem;
+    }
+    .note__appbar div{
+        justify-content: flex-end;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .note__appbar div button{
+        margin-bottom: 0.5rem;
+    }
+
+    .note__title-input{
+        width: 100%;    
+    }
+    
+    .note__textarea{
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .note__image{       
+        padding: .2rem;
+        width: 90%;
+
+    }
+    
+    .note__image img{
+        width: 100%;        
+    }
+}
