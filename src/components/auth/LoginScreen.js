@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import {useDispatch} from 'react-redux';
-import { login } from '../../actions/auth';
+import { startLoginWithEmailPassword, startLoginWithGoogle } from '../../actions/auth';
 
 export const LoginScreen = () => {
 
@@ -20,7 +20,15 @@ export const LoginScreen = () => {
 
         //Se usa el dispatch para disparar la acción login, enviando el email y el password del usuario
         //Este dispatch va al store, allí se identiica el reducer a usar, al encontrar el reducer, dependiendo del tipo de acción, se ejecuta el payload y se actuliza en el stado
-        dispatch(login(12345, 'Luis'));
+        dispatch(startLoginWithEmailPassword(email, password));
+    }
+
+    const handleLoginGoogle = (e) =>{
+        e.preventDefault();
+
+        //Se usa el dispatch para disparar la acción login, enviando el email y el password del usuario
+        //Este dispatch va al store, allí se identiica el reducer a usar, al encontrar el reducer, dependiendo del tipo de acción, se ejecuta el payload y se actuliza en el stado
+        dispatch(startLoginWithGoogle());
     }
 
     return (
@@ -57,6 +65,7 @@ export const LoginScreen = () => {
                     </p>
                     <div 
                         className="google-btn"
+                        onClick={handleLoginGoogle}
                     >
                         <div className="google-icon-wrapper">
                             <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
