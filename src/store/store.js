@@ -3,6 +3,7 @@
 import {createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { authReducer } from '../reducers/authReducer';
 import thunk from 'redux-thunk';
+import { uiReducer } from '../reducers/uiReducer';
 
 //El combineReducers nos permite listar los reducers que se tendrán en la aplicación.
 //El createStore sólo puede recibir un reduser a la vez, sin el ambrgo, siempre se le puede enviar el combineReducer el cual tiene todos los reducesrs listados
@@ -12,7 +13,8 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 
 //A medida que la app crezca, se agregarán los reducers acá
 const reducers = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    ui: uiReducer
 });
 
 export const store = createStore(
