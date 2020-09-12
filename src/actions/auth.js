@@ -1,16 +1,27 @@
 import { types } from "../types/types";
 import {firebase, googleAuthProvider} from "../firebase/firebaseConfig";
+import { startLoading, finishtLoading } from "./ui";
 
 
 //Esta función nos permite iniciar sesión con las credenciales que el usuario ingresa en la aplicación
 //Esta función retorna un callback que ejecuta la petición asincrona para validar las credenciales ingresadas
 export const startLoginWithEmailPassword = (email, password) => {
     return (dispatch) =>{
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        dispatch(startLoading());            
+
+        setTimeout(() => {
+            firebase.auth().signInWithEmailAndPassword(email, password)
             .then( ({user}) => {
                 console.log(user);
                 dispatch(login(user.uid, user.displayName));
-            });
+
+                dispatch(finishtLoading()); 
+            })
+            .catch(e=>{
+                console.log(e);
+                dispatch(finishtLoading()); 
+            })
+        }, 50000);
     };
 }
 
