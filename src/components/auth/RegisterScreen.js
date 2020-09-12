@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setError, removeError } from '../../actions/ui';
+import { startRegisterWithEmailPassword } from '../../actions/auth';
 
 export const RegisterScreen = () => {
 
     const dispatch = useDispatch();
 
+    const {msgError} = useSelector(state => state.ui);
+    
     const [formValues, handleInputChange] = useForm({
         name: '',
         email: '',
@@ -22,7 +25,8 @@ export const RegisterScreen = () => {
         e.preventDefault();  
         
         if (isFormValid()) {
-            
+            //Se hace el dispatch usando la función para crear el usuario el firebase
+            dispatch(startRegisterWithEmailPassword(name, email, password));
         } 
     }
 
@@ -47,7 +51,10 @@ export const RegisterScreen = () => {
 
     return (
         <div>
-            <div className="auth__alert-error">error</div>
+            {
+                (msgError !== null)
+                    &&<div className="auth__alert-error">{msgError}</div>
+            }
 
             <h3 className="auth__title">Create Account</h3>
             <form onSubmit={handleRegister}>
