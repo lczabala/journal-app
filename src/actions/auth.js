@@ -61,3 +61,20 @@ export const login = (uid, name) => {
         }
     };
 }
+
+//Función para iniciar el logout
+export const startLogout = () =>{
+    return async(dispatch) =>{
+        //Se llama a la función de firebase responsable de ejecutar la acción del logout
+        await firebase.auth().signOut();
+        //Al ejecutarse el logout en fasebase, se realiza el dispatch para actualizar el estado
+        dispatch(logout());
+    }
+}
+
+//Permite ejecutar la acción para quitar al usuario logueado
+export const logout = () => {
+    return{
+        type: types.logout
+    };
+}
