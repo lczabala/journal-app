@@ -50,7 +50,7 @@ export const AppRouter = () => {
                         component={
                             () => (
                                 (!isLoggedIn)
-                                    ?(<AuthRouter/>)
+                                    ? (<AuthRouter/>)
                                     : (<Redirect to="/"/>)
                             )
                     }/>
