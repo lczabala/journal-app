@@ -16,9 +16,7 @@ export const JournalEntry = () => {
                 <div className="journal__entry-date">
                     05/09/2020
                 </div>
-            </div>
-            
-            
+            </div>  
         </div>
     )
 }
